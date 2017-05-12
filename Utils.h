@@ -5,7 +5,8 @@ typedef enum _operation
 {
 	UNION,
 	DIFFERENCE,
-	INTERSECTION
+	INTERSECTION,
+	SYMMETRIC_DIFF
 } Operation;
 
 #endif /* __UTILS_H__ */

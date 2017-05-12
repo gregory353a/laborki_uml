@@ -5,11 +5,15 @@
 
 class Shape
 {
+protected:
+	Point pos;
+
 public:
 	Shape();
 	~Shape();
 	
 	virtual bool isIn(Point *p) = 0;
+	void setPosition(Point *p);
 };
 
 #endif /* __SHAPE_H__ */

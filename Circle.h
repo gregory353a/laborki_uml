@@ -2,6 +2,7 @@
 #define __CIRCLE_H__
 
 #include <stdlib.h>
+#include <math.h>
 #include "Shape.h"
 
 class Circle : public Shape

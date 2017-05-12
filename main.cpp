@@ -5,27 +5,40 @@
 #include "Rect.h"
 #include "Point.h"
 
+void draw(Shape *s, Point *start, Point *end, int resX, int resY)
+{
+	float diffX = (end->getX() - start->getX()) / resX;
+	float diffY = (end->getY() - start->getY()) / resY;
+	printf("diff = %f;%f\n\n", diffX, diffY);
+
+	printf("-----------------------------------------------------------------------\n");
+	for(float y = start->getY(); y >= end->getY(); y += diffY)
+	{
+		for(float x = start->getX(); x <= end->getX(); x += diffX)
+		{
+			Point p(x, y);
+			if(s->isIn(&p))
+				printf("X");
+			else
+				printf(" ");
+		}
+		printf("\n");
+	}
+	printf("-----------------------------------------------------------------------\n");
+}
+
 int main(int argc, char *argv[])
 {
 	printf("main: arrived\n");
 
-	Circle *c = new Circle(10);
-	printf("Circle (rad 10): %p\n", c);
-	Rect *r = new Rect(4, 6);
-	printf("Rect (w 4, h 6): %p\n", r);
+	Circle *c = new Circle(3);
+	Rect *r = new Rect(14, 2);
+	ComplexShape *cs = new ComplexShape(c, r, SYMMETRIC_DIFF);
 
-	ComplexShape *cs = new ComplexShape(c, r, UNION);
-	printf("ComplexShape (C u R): %p\n", cs);
+	Point start(-10, 5);
+	Point end(10, -5);
 
-	Point *p1 = new Point(1, 2);
-	Point *p2 = new Point(100,100);
-
-	if(r->isIn(p1))
-		printf("1 OK\n");
-
-	if(!r->isIn(p2))
-		printf("2 OK\n");
-
+	draw(cs, &start, &end, 40, 20);
 
 	delete cs;
 	delete c;

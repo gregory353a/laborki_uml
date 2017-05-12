@@ -2,8 +2,8 @@
 
 Point::Point(float x, float y)
 {
-	x = x;
-	y = y;
+	this->x = x;
+	this->y = y;
 }
 
 Point::~Point()
@@ -22,10 +22,15 @@ float Point::getY()
 
 void Point::setX(float x)
 {
-	x = x;
+	this->x = x;
 }
 
 void Point::setY(float y)
 {
-	y = y;
+	this->y = y;
+}
+
+Point *Point::translate(Point *p)
+{
+	
 }

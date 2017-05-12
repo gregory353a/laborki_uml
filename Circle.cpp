@@ -11,5 +11,5 @@ Circle::~Circle()
 
 bool Circle::isIn(Point *p)
 {
-	return false;
+	return pow(p->getX(), 2) + pow(p->getY(), 2) <= pow(radius, 2);
 }

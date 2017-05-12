@@ -16,6 +16,8 @@ public:
 
 	void setX(float x);
 	void setY(float y);
+
+	Point *translate(Point *p);
 };
 
 #endif /* __POINT_H__ */
