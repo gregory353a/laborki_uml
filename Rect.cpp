@@ -12,5 +12,6 @@ Rect::~Rect()
 
 bool Rect::isIn(Point *p)
 {
-	return ((abs(p->getX()) < width/2) && (abs(p->getY()) < height/2));
+	Point t = p->translate(&this->pos);
+	return ((abs(t.getX()) < width/2) && (abs(t.getY()) < height/2));
 }

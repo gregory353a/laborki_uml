@@ -13,12 +13,14 @@ ComplexShape::~ComplexShape()
 
 bool ComplexShape::isIn(Point *p)
 {
+	Point t = p->translate(&this->pos);
+
 	if(op == UNION)
-		return left->isIn(p) || right->isIn(p);
+		return left->isIn(&t) || right->isIn(&t);
 	else if(op == DIFFERENCE)
-		return left->isIn(p) && !right->isIn(p);
+		return left->isIn(&t) && !right->isIn(&t);
 	else if(op == INTERSECTION)
-		return left->isIn(p) && right->isIn(p);
+		return left->isIn(&t) && right->isIn(&t);
 	else if(op == SYMMETRIC_DIFF)
-		return (left->isIn(p) || right->isIn(p)) && !(left->isIn(p) && right->isIn(p));
+		return (left->isIn(&t) || right->isIn(&t)) && !(left->isIn(&t) && right->isIn(&t));
 }

@@ -30,7 +30,9 @@ void Point::setY(float y)
 	this->y = y;
 }
 
-Point *Point::translate(Point *p)
+Point Point::translate(Point *p)
 {
-	
+	Point t(this->getX() - p->getX(), this->getY() - p->getY());
+	return t;
+
 }

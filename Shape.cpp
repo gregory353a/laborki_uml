@@ -1,6 +1,6 @@
 #include "Shape.h"
 
-Shape::Shape()
+Shape::Shape() : pos(0, 0)
 {
 }
 
@@ -8,7 +8,7 @@ Shape::~Shape()
 {
 }
 
-Shape::setPosition(Point *p)
+void Shape::setPosition(Point p)
 {
 	pos = p;
 }

@@ -13,7 +13,7 @@ public:
 	~Shape();
 	
 	virtual bool isIn(Point *p) = 0;
-	void setPosition(Point *p);
+	void setPosition(Point p);
 };
 
 #endif /* __SHAPE_H__ */

@@ -35,6 +35,15 @@ int main(int argc, char *argv[])
 	Rect *r = new Rect(14, 2);
 	ComplexShape *cs = new ComplexShape(c, r, SYMMETRIC_DIFF);
 
+	Point r_pos(-4, 2);
+	r->setPosition(r_pos);
+
+	Point c_pos(0, -1);
+	c->setPosition(c_pos);
+
+	Point cs_pos(1, -3);
+	cs->setPosition(cs_pos);
+
 	Point start(-10, 5);
 	Point end(10, -5);
 
