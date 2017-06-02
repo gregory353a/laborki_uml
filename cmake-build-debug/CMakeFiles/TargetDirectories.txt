@@ -1,0 +1,3 @@
+C:/Users/GPF/CLionProjects/labuml/cmake-build-debug/CMakeFiles/labuml.dir
+C:/Users/GPF/CLionProjects/labuml/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/GPF/CLionProjects/labuml/cmake-build-debug/CMakeFiles/rebuild_cache.dir
